@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, Calculator, Check, CreditCard, Wallet } from "@phosphor-icons/react";
 import ToolComponent from "@/components/tool/ToolComponent";
