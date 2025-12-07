@@ -1,0 +1,7 @@
+name = "expense-tracker-api"
+main = "workers/index.js"
+compatibility_date = "2024-01-01"
+
+# Cloudflare Free Tier
+# - 100,000 requests/day
+# - 10ms CPU time/request
