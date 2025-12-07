@@ -1,7 +1,7 @@
 // API Router - expense-tracker
 // Auto-generated entry point
 
-import to_handle_user_autheHandler from './to-handle-user-authe.js';
+import auto_categorize_expeHandler from './auto-categorize-expe.js';
 import downloadHandler from './download.js';
 
 export default {
@@ -20,7 +20,7 @@ export default {
     }
     
     // Route to handlers
-  if (url.pathname === '/api/to-handle-user-authe') return to_handle_user_autheHandler.fetch(request, env);
+  if (url.pathname === '/api/auto-categorize-expe') return auto_categorize_expeHandler.fetch(request, env);
   if (url.pathname === '/api/download') return downloadHandler.fetch(request, env);
     
     return new Response('Not Found', { status: 404 });
