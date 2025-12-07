@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "@phosphor-icons/react";
+import { List, X } from "@phosphor-icons/react";
 import Logo from "./Logo";
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileListOpen, setMobileListOpen] = useState(false);
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -40,26 +40,26 @@ export default function Header() {
             </Link>
           </nav>
           
-          {/* Mobile Menu Button */}
+          {/* Mobile List Button */}
           <button 
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => setMobileListOpen(!mobileListOpen)}
             className="md:hidden p-2 text-gray-600 hover:text-gray-900 focus:outline-none"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileListOpen ? <X className="w-6 h-6" /> : <List className="w-6 h-6" />}
           </button>
         </div>
       </div>
       
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
+      {/* Mobile List */}
+      {mobileListOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 animate-fade-in">
           <nav className="container-custom py-4 space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => setMobileListOpen(false)}
                 className="block py-3 px-4 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg font-medium transition-colors"
               >
                 {link.label}
@@ -67,7 +67,7 @@ export default function Header() {
             ))}
             <Link
               href="/#tool"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => setMobileListOpen(false)}
               className="block py-3 px-4 mt-2 bg-primary-600 hover:bg-primary-700 text-white text-center font-semibold rounded-lg transition-colors"
             >
               Try Free
