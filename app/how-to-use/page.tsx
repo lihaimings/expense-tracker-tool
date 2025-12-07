@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { createContext, ArrowRight, LucideIcon } from "react";
+import Link from "next/link";
+import { createContext } from "react";
+import { ArrowRight, LucideIcon } from "lucide-react";
 
 export default function HowToUsePage() {
   return (
