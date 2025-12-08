@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import Link from "next/link";
+import { ArrowLeft, Calendar, Clock } from "lucide-react";
 
 interface BlogPost {
   slug: string;
@@ -54,7 +55,7 @@ export default function BlogPage() {
       <div className="container-custom max-w-4xl">
         <div className="mb-8">
           <Link href="/" className="text-primary-600 hover:text-primary-700 inline-flex items-center gap-2 mb-4">
-            
+            <ArrowLeft className="w-4 h-4" />
             Back to Expense Tracker
           </Link>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900">Blog</h1>
@@ -73,7 +74,7 @@ export default function BlogPage() {
                   </h2>
                   {post.date && (
                     <div className="flex items-center gap-2 text-sm text-gray-500 mt-2">
-                      
+                      <Calendar className="w-4 h-4" />
                       {post.date}
                     </div>
                   )}

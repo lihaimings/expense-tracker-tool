@@ -1,6 +1,6 @@
 "use client";
 
-import { TrendUp } from "@phosphor-icons/react";
+import { TrendingUp } from "@phosphor-icons/react";
 import Link from "next/link";
 
 interface LogoProps {
@@ -40,7 +40,7 @@ export default function Logo({
     >
       {/* 光泽效果 */}
       <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent" />
-      <TrendUp className={`${sizes[size].icon} text-white relative z-10`} />
+      <TrendingUp className={`${sizes[size].icon} text-white relative z-10`} />
     </div>
   );
 

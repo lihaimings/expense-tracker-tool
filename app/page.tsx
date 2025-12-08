@@ -1,10 +1,58 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight, Calculator, Check, CreditCard, Wallet } from "@phosphor-icons/react";
 import ToolComponent from "@/components/tool/ToolComponent";
 
 export default function HomePage() {
+  return (
+    <>
+      {/* Hero Section */}
+      <section className="bg-gradient-subtle section">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 animate-fade-in">
+              Simple expense tracking on the go
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-600 mb-8 animate-slide-up">
+              The Expense Tracker is a mobile-friendly tool designed to help accountants and small business owners manage their expenses efficiently. Our intuitive 
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
+              <a href="#tool" className="btn-primary inline-flex items-center gap-2">
+                Try It Now
+                <ArrowRight className="w-5 h-5" />
+              </a>
+              <Link href="/how-to-use" className="btn-secondary">
+                Learn More
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Tool Section */}
+      <section id="tool" className="section bg-white">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <ToolComponent />
+          </div>
+        </div>
+      </section>
+      
+      {/* Features Section */}
+      <section className="section bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Why Choose Expense Tracker?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Powerful features designed to make your work easier
+            </p>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
   return (
     <>
       {/* Hero Section */}

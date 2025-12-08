@@ -2,7 +2,8 @@ import fs from "fs";
 import path from "path";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { Metadata } from 'next';
+import { ArrowLeft, Calendar, Share2 } from "lucide-react";
+import { Metadata } from "next";
 
 interface Props {
   params: { slug: string };
@@ -75,7 +76,7 @@ export default function BlogArticlePage({ params }: Props) {
       <div className="container-custom max-w-3xl">
         <div className="mb-8">
           <Link href="/blog" className="text-primary-600 hover:text-primary-700 inline-flex items-center gap-2 mb-4">
-            ←
+            <ArrowLeft className="w-4 h-4" />
             All Articles
           </Link>
           
@@ -86,7 +87,7 @@ export default function BlogArticlePage({ params }: Props) {
           {post.date && (
             <div className="flex items-center gap-4 text-gray-500">
               <span className="flex items-center gap-2">
-                📅
+                <Calendar className="w-4 h-4" />
                 {post.date}
               </span>
             </div>
@@ -117,7 +118,7 @@ function formatMarkdown(md: string): string {
     .replace(/\*(.*?)\*/g, "<em>$1</em>")
     .replace(/\n\n/g, "</p><p>")
     .replace(/^- (.*$)/gm, "<li>$1</li>")
-    .replace(/(<li>[\s\S]*<\/li>)/, "<ul>$1</ul>")
+    .replace(/(<li>.*<\/li>)/s, "<ul>$1</ul>")
     .replace(/^(?!<[h|p|u|l])/gm, "<p>")
     .replace(/([^>])$/gm, "$1</p>");
 }
